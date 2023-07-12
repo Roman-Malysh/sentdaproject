@@ -9,16 +9,16 @@ import {Adress} from './components/Adress';
 import {Footer} from './components/Footer';
 import {OurMission} from './components/OurMission';
 import {Mission} from './Mission';
-import { AboutUs } from './AboutUs';
-import { Shop } from './Shop';
-import { Contacts } from './Contacts';
-import { MyAccount } from './MyAccount';
-import { Cart } from './Cart';
+import {AboutUs} from './AboutUs';
+import {Shop} from './Shop';
+import {Contacts} from './Contacts';
+import {MyAccount} from './MyAccount';
+import {Cart} from './Cart';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Link, redirect} from 'react-router-dom';
 import './App.scss';
-import { Privacy } from './Privacy';
-import { Login } from './components/Login';
+import {Privacy} from './Privacy';
+import {Login} from './components/Login';
 
 export const Home = () => {
   return (
@@ -48,6 +48,7 @@ export const App = () => {
           <Route path='/Privacy' Component={Privacy} />
           <Route path='/MyAccount' Component={MyAccount} />
           <Route path='/Cart' Component={Cart} />
+          <Route path='/sentdaproject' Component={Home}/>
         </Routes>
       </main>
       <Footer />

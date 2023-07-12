@@ -20,7 +20,7 @@ export const Header = () => {
             </NavLink>
           </li>
           <li className='li-tablet'>
-            <NavLink to={'./Mission.jsx'} onClick={() => setIsNav(false)}>
+            <NavLink to={'./Mission'} onClick={() => setIsNav(false)}>
               Our Mission
             </NavLink>
           </li>
@@ -77,7 +77,7 @@ export const Header = () => {
             </NavLink>
           </li>
           <li className='li-tablet'>
-            <NavLink to={'./Mission.jsx'} onClick={() => setIsNav(false)}>
+            <NavLink to={'./Mission'} onClick={() => setIsNav(false)}>
               Our Mission
             </NavLink>
           </li>
