@@ -2,7 +2,7 @@
   "name": "sentdacom",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://https://roman-malysh.github.io/sentdaproject/",
+  "homepage": "https://roman-malysh.github.io/sentdaproject/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
