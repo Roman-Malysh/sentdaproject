@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/sentdaproject/static/css/main.39e92578.css",
-    "main.js": "/sentdaproject/static/js/main.503c1b42.js",
+    "main.css": "/sentdaproject/static/css/main.1dd0558b.css",
+    "main.js": "/sentdaproject/static/js/main.41db056c.js",
     "static/js/787.b2bdff86.chunk.js": "/sentdaproject/static/js/787.b2bdff86.chunk.js",
     "static/media/skysolid.png": "/sentdaproject/static/media/skysolid.db908a68647c16fe8d57.png",
     "static/media/logo_02.png": "/sentdaproject/static/media/logo_02.b8d60484a77081093fdc.png",
     "static/media/flower.webp": "/sentdaproject/static/media/flower.c92715a3f91093cf9597.webp",
     "static/media/banner.webp": "/sentdaproject/static/media/banner.1fec5a1c1836658e1ce2.webp",
     "index.html": "/sentdaproject/index.html",
-    "main.39e92578.css.map": "/sentdaproject/static/css/main.39e92578.css.map",
-    "main.503c1b42.js.map": "/sentdaproject/static/js/main.503c1b42.js.map",
+    "main.1dd0558b.css.map": "/sentdaproject/static/css/main.1dd0558b.css.map",
+    "main.41db056c.js.map": "/sentdaproject/static/js/main.41db056c.js.map",
     "787.b2bdff86.chunk.js.map": "/sentdaproject/static/js/787.b2bdff86.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.39e92578.css",
-    "static/js/main.503c1b42.js"
+    "static/css/main.1dd0558b.css",
+    "static/js/main.41db056c.js"
   ]
 }
