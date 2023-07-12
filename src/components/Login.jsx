@@ -5,8 +5,8 @@ export const Login = ({setIsNav, setIsLogin}) => {
   return (
     <form action='' className='loginForm' onMouseLeave={() => setIsLogin(false)}>
       <div className='input-wrap'>
-      <input type='text' className='loginForm__input' />
-      <input type='password' className='loginForm__input' />
+      <input type='text' className='loginForm__input' placeholder='Enter your name'/>
+      <input type='password' className='loginForm__input' placeholder='Enter your email'/>
       <div>
       <input type='checkbox' id='checkbox' />
       <label htmlFor='checkbox'>Remember me</label>
