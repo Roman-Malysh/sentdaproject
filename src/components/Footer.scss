@@ -1,0 +1,39 @@
+@import './Variables.scss';
+@import './Mixins.scss';
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+	height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $orange;
+  height: 100px;
+  padding: 0 20px;
+  
+  @include onTablet {
+    height: 150px;
+    padding: 0 40px;
+  }
+}
+.li-a {
+  font-size: 10px;
+  @include onTablet {
+    font-size: 13px;
+  }
+  color: #fff;
+  margin: 0;
+  padding: 0 10px;
+  border-right: 1px solid #fff;
+}
+
+.li {
+  margin: 0;
+  height: auto;
+  
+}
+.ul {
+  display: contents;
+}

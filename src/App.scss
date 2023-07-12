@@ -1,0 +1,82 @@
+@import '../src/components/Variables.scss';
+@import "../src/components/Mixins.scss";
+
+* {
+  transition: 0.3s;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+
+body {
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  /* Чтобы занимал оставшееся пространство */
+  flex-grow: 1;
+}
+
+.main {
+  overflow-x: hidden;
+  max-width: 1200px;
+  @include OnPhone {
+    margin: 0 20px;
+  }
+  @include onTablet {
+    margin: 0 40px;
+  }
+  @include onDesktop {
+    margin: 0 auto;
+  }
+}
+
+.active {
+  color: $orange;
+}
+
+section {
+  margin-top: 50px;
+}
+
+h1 {
+  background-image: url('./icons/skysolid.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $orange;
+  text-shadow: 1px 1px 0 black;
+  @include onTablet {
+    height: 300px;
+  }
+  @include onDesktop {
+    width: 800px;
+    height: 400px;
+    margin: 0 auto 60px;
+  }
+}
+
+h3 {
+  color: $orange;
+  text-shadow: 1px 0 0 black;
+}
+
+.section-title {
+  font-size: 30px;
+  color: $orange;
+  text-shadow: 1px 1px 0 black;
+}

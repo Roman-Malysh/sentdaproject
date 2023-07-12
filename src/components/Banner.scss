@@ -1,0 +1,65 @@
+@import './Variables.scss';
+@import './Mixins.scss';
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  text-align: center;
+  background-image: url('../icons/banner.webp');
+  color: black;
+  font-size: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 270px;
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 20px;
+  &__title {
+    animation: appearance 0.3s forwards linear;
+    color: $orange;
+  text-shadow: 1px 1px 0 black;
+  }
+  @include onTablet {
+    height: 400px;
+  }
+  @include onDesktop {
+    height: 600px;
+    border-radius: 60px;
+  }
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $orange;
+  width: 200px;
+  height: 40px;
+  border-radius: 15px;
+  margin-top: 30px;
+  animation: appearance 0.3s forwards linear;
+  
+  @include onTablet {
+    margin-top: 150px;
+  }
+  @include onDesktop {
+    @include CardHover;
+  }
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

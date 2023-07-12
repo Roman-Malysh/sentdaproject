@@ -1,0 +1,39 @@
+@import './Variables.scss';
+
+@mixin onTablet {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1260px) {
+    @content;
+  }
+}
+
+@mixin OnPhone {
+  @media (max-width: 744px) {
+    @content;
+  }
+}
+
+@mixin NavHover {
+  :hover {
+    color: $orange;
+  }
+}
+
+@mixin CardHover {
+  :hover {
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+}
+
+@mixin ButtonHover {
+  :hover {
+    color: #a87847;
+    font-size: 200px;
+  }
+}

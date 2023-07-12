@@ -1,0 +1,162 @@
+@import './Variables.scss';
+@import './Mixins.scss';
+
+.header {
+  background-color: $white;
+  margin: 0 20px;
+  height: 300px;
+  @include onTablet {
+    margin: 0 40px;
+  }
+  @include onDesktop {
+    height: 250px;
+    margin: 0 60px;
+  }
+  &__input {
+    outline: none;
+    border: none;
+    background-color: #f5f5f5;
+    padding-left: 20px;
+    width: 80px;
+  }
+  &__form {
+    height: 70px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 4%;
+    position: relative;
+    z-index: 1;
+    @include onTablet {
+      display: none;
+    }
+  }
+}
+
+.tablet-search {
+  height: 50px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 5px;
+    position: relative;
+    width: 120px;
+    z-index: 1;
+    @include OnPhone {
+      display: none;
+    }
+    @include onDesktop {
+      width: 240px;
+    }
+}
+
+.home {
+  display: flex;
+  background-image: url('../icons/logo_02.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 140px;
+  height: 140px;
+  margin-left: 20px;
+  @include onTablet {
+    margin: 0 30px 0 0;
+  }
+  @include onDesktop {
+    width: 200px;
+    height: 200px;
+    margin: 0 120px 0 0;
+  }
+}
+
+.search {
+  display: flex;
+  background-image: url(../icons/loupe.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #f5f5f5;
+  border: none;
+  width: 15px;
+  height: 15px;
+}
+
+.header__wrap-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+  @include onDesktop {
+    margin: 0;
+  }
+}
+
+.icons-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  @include onDesktop {
+    gap: 20px;
+  }
+}
+
+
+.ul {
+  list-style-type: none;
+  padding: 0;
+  z-index: 202220;
+  position: relative;
+}
+ul a {
+  color: black;
+}
+
+nav {
+  position: absolute;
+  left: 0;
+  top: 140px;
+  z-index: 100000;
+  width: 100%;
+  background-color: #fff;
+  transform: translateX(-1000px);
+  @include onTablet {
+    display: none;
+  }
+}
+
+.isNavOpen {
+  transform: translateX(0);
+}
+
+li {
+  font-size: 20px;
+  padding-left: 20px;
+  line-height: 40px;
+  position: relative;
+  z-index: 100000;
+  @include onDesktop {
+    @include NavHover;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.ul-tablet {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  @include OnPhone {
+    display: none;
+  }
+}
+
+.ul-tablet li {
+  @include onDesktop {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,8 @@
+@import './Mixins.scss';
+
+.perk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}

@@ -1,0 +1,28 @@
+@import './Variables.scss';
+@import './Mixins.scss';
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $orange;
+  width: 200px;
+  height: 40px;
+  border-radius: 15px;
+  margin-top: 30px;
+  color: #fff;
+  @include onDesktop {
+    @include ButtonHover;
+  }
+}
+
+.learnmore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.learnmore h2, p {
+  text-align: center;
+}
