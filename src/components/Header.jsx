@@ -56,11 +56,11 @@ export const Header = () => {
           setIsLogin(false);
         }}></NavLink>
         <div className='icons-wrap'>
-          <NavLink to={'/MyAccount'}><BiSolidUser color='#D1A476' size={'30px'} onMouseEnter={() => {
+          <NavLink to={'/MyAccount'}><BiSolidUser color='#49796B' size={'30px'} onMouseEnter={() => {
             setIsLogin(true);
             setIsNav(false);
           }}/></NavLink>
-          <NavLink to={'/Cart'}><PiBasketFill color='#D1A476' size={'30px'} /></NavLink>
+          <NavLink to={'/Cart'}><PiBasketFill color='#49796B' size={'30px'} /></NavLink>
           {isLogin && (
             <Login setIsNav={setIsNav} setIsLogin={setIsLogin}/>
           )}

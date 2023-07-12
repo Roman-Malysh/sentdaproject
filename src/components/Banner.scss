@@ -19,7 +19,6 @@
   &__title {
     animation: appearance 0.3s forwards linear;
     color: $orange;
-  text-shadow: 1px 1px 0 black;
   }
   @include onTablet {
     height: 400px;

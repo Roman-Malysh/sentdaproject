@@ -47,6 +47,9 @@
     @include OnPhone {
       display: none;
     }
+    @include onTablet {
+      width: 150px;
+    }
     @include onDesktop {
       width: 240px;
     }
@@ -73,6 +76,7 @@
 
 .search {
   display: flex;
+  padding: 0;
   background-image: url('../icons/loupe.png');
   background-position: center;
   background-repeat: no-repeat;
