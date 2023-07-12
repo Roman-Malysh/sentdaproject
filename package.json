@@ -1,8 +1,8 @@
 {
-  "name": "sentda.com",
+  "name": "sentdacom",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://roman-malysh.github.io/Portfolio/sentda.com",
+  "homepage": "https://roman-malysh.github.io/Portfolio/sentdacom/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
