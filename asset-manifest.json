@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "//roman-malysh.github.io/sentdaproject/static/css/main.e162235d.css",
-    "main.js": "//roman-malysh.github.io/sentdaproject/static/js/main.644e69d2.js",
+    "main.js": "//roman-malysh.github.io/sentdaproject/static/js/main.b8ed0e02.js",
     "static/js/787.b2bdff86.chunk.js": "//roman-malysh.github.io/sentdaproject/static/js/787.b2bdff86.chunk.js",
     "static/media/skysolid.png": "//roman-malysh.github.io/sentdaproject/static/media/skysolid.db908a68647c16fe8d57.png",
     "static/media/logo_02.png": "//roman-malysh.github.io/sentdaproject/static/media/logo_02.b8d60484a77081093fdc.png",
@@ -9,11 +9,11 @@
     "static/media/banner.webp": "//roman-malysh.github.io/sentdaproject/static/media/banner.1fec5a1c1836658e1ce2.webp",
     "index.html": "//roman-malysh.github.io/sentdaproject/index.html",
     "main.e162235d.css.map": "//roman-malysh.github.io/sentdaproject/static/css/main.e162235d.css.map",
-    "main.644e69d2.js.map": "//roman-malysh.github.io/sentdaproject/static/js/main.644e69d2.js.map",
+    "main.b8ed0e02.js.map": "//roman-malysh.github.io/sentdaproject/static/js/main.b8ed0e02.js.map",
     "787.b2bdff86.chunk.js.map": "//roman-malysh.github.io/sentdaproject/static/js/787.b2bdff86.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e162235d.css",
-    "static/js/main.644e69d2.js"
+    "static/js/main.b8ed0e02.js"
   ]
 }
