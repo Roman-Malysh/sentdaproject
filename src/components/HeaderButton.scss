@@ -23,16 +23,6 @@
   transform: none;
 }
 
-.hamburger-icon .isDarkModeSpan {
-  height: 3px;
-  width: 30px;
-  background-color: lightblue;
-  display: block;
-  margin: 6px 0px 6px 0px;
-  transition: 0.7s ease-in-out;
-  transform: none;
-}
-
 #menu:checked ~ .menu-pane {
   left: -5vw;
   transform: translateX(-5vw);

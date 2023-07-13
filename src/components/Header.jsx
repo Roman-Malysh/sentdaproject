@@ -12,6 +12,7 @@ export const Header = () => {
   const [isLogin, setIsLogin] = useState(false);
   return (
     <header className='header'>
+      
       <nav className={isNavOpen ? 'isNavOpen' : 'nav'}>
         <ul className='ul'>
           <li className='li-tablet'>
@@ -42,6 +43,9 @@ export const Header = () => {
         </ul>
       </nav>
       <div className='header__wrap-top'>
+      {isLogin && (
+            <Login setIsNav={setIsNav} setIsLogin={setIsLogin}/>
+          )}
         <HeaderButton setIsNav={setIsNav} isNavOpen={isNavOpen} setIsLogin={setIsLogin}/>
         <form className='tablet-search'>
           <button className='search' />
@@ -61,9 +65,6 @@ export const Header = () => {
             setIsNav(false);
           }}/></NavLink>
           <NavLink to={'/Cart'}><PiBasketFill color='#49796B' size={'30px'} /></NavLink>
-          {isLogin && (
-            <Login setIsNav={setIsNav} setIsLogin={setIsLogin}/>
-          )}
         </div>
       </div>
       <form className='header__form'>

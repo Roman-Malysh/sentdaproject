@@ -9,8 +9,10 @@
     margin: 0 40px;
   }
   @include onDesktop {
+    min-width: 100%;
+    max-width: 1200px;
     height: 250px;
-    margin: 0 60px;
+    margin: 0 auto;
   }
   &__input {
     outline: none;
@@ -89,17 +91,22 @@
 
 .header__wrap-top {
   display: flex;
+  position: relative;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 40px 0;
+  max-width: 1200px;
   @include onDesktop {
     margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }
 
 .icons-wrap {
   display: flex;
+  position: relative;
   align-items: center;
   gap: 10px;
   @include onDesktop {
