@@ -1,19 +1,26 @@
 {
   "files": {
-    "main.css": "/sentdaproject/static/css/main.1dd0558b.css",
-    "main.js": "/sentdaproject/static/js/main.41db056c.js",
+    "main.css": "/sentdaproject/static/css/main.02da26b6.css",
+    "main.js": "/sentdaproject/static/js/main.e7763639.js",
     "static/js/787.b2bdff86.chunk.js": "/sentdaproject/static/js/787.b2bdff86.chunk.js",
     "static/media/skysolid.png": "/sentdaproject/static/media/skysolid.db908a68647c16fe8d57.png",
+    "static/media/Tools&Home1.jpeg": "/sentdaproject/static/media/Tools&Home1.83b77722b881cd555219.jpeg",
+    "static/media/Sport&Outdors1.jpeg": "/sentdaproject/static/media/Sport&Outdors1.b33fb027e2c6dfed55d2.jpeg",
+    "static/media/Clothes.png": "/sentdaproject/static/media/Clothes.bb6602e3705bee477be3.png",
+    "static/media/Home&Kitchen1.jpeg": "/sentdaproject/static/media/Home&Kitchen1.e37dd390266986cf2206.jpeg",
+    "static/media/Toys & Games.webp": "/sentdaproject/static/media/Toys & Games.6e8b5d29e4fa89b6b63a.webp",
     "static/media/logo_02.png": "/sentdaproject/static/media/logo_02.b8d60484a77081093fdc.png",
+    "static/media/Electronics.webp": "/sentdaproject/static/media/Electronics.f4faebc3463b7e78becc.webp",
     "static/media/flower.webp": "/sentdaproject/static/media/flower.c92715a3f91093cf9597.webp",
+    "static/media/Automotive.jpeg": "/sentdaproject/static/media/Automotive.97e13524d73f6da85881.jpeg",
     "static/media/banner.webp": "/sentdaproject/static/media/banner.1fec5a1c1836658e1ce2.webp",
     "index.html": "/sentdaproject/index.html",
-    "main.1dd0558b.css.map": "/sentdaproject/static/css/main.1dd0558b.css.map",
-    "main.41db056c.js.map": "/sentdaproject/static/js/main.41db056c.js.map",
+    "main.02da26b6.css.map": "/sentdaproject/static/css/main.02da26b6.css.map",
+    "main.e7763639.js.map": "/sentdaproject/static/js/main.e7763639.js.map",
     "787.b2bdff86.chunk.js.map": "/sentdaproject/static/js/787.b2bdff86.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1dd0558b.css",
-    "static/js/main.41db056c.js"
+    "static/css/main.02da26b6.css",
+    "static/js/main.e7763639.js"
   ]
 }
