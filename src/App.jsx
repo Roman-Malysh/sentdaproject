@@ -8,16 +8,16 @@ import {SubscribeForm} from './components/SubscribeForm';
 import {Adress} from './components/Adress';
 import {Footer} from './components/Footer';
 import {OurMission} from './components/OurMission';
-import {Mission} from './Mission';
-import {AboutUs} from './AboutUs';
-import {Shop} from './Shop';
-import {Contacts} from './Contacts';
-import {MyAccount} from './MyAccount';
-import {Cart} from './Cart';
+import {Mission} from './Pages/Mission';
+import {AboutUs} from './Pages/AboutUs';
+import {Shop} from './Pages/Shop';
+import {Contacts} from './Pages/Contacts';
+import {MyAccount} from './Pages/MyAccount';
+import {Cart} from './Pages/Cart';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import {BrowserRouter as Router, Routes, Route, Link, redirect} from 'react-router-dom';
 import './App.scss';
-import {Privacy} from './Privacy';
+import {Privacy} from './Pages/Privacy';
 import {Login} from './components/Login';
 
 export const Home = () => {

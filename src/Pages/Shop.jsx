@@ -1,6 +1,6 @@
-import { Adress } from './components/Adress';
-import { SubscribeForm } from './components/SubscribeForm';
-import '../src/components/OurMission.scss';
+import { Adress } from '../components/Adress';
+import { SubscribeForm } from '../components/SubscribeForm';
+import '../components/Defaultsection.scss';
 
 export const Shop = () => {
   return (

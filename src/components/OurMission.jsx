@@ -1,5 +1,5 @@
 import {SubscribeForm} from './SubscribeForm.jsx';
-import './OurMission.scss';
+import './Defaultsection.scss';
 import { Adress } from './Adress.jsx';
 
 export const OurMission = () => {
