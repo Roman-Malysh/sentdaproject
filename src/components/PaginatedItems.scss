@@ -1,0 +1,100 @@
+@import './Mixins.scss';
+
+.containerPagination {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+}
+
+.pagination {
+  display: flex;
+  padding: 0;
+  cursor: pointer;
+  margin-bottom: 100px;
+}
+
+.pagination .li_active {
+  background-color: #49796B;
+  color: white;
+  border-radius: 10px;
+}
+
+.li {
+  padding: 0 10px;
+  margin: 5px;
+}
+
+.page-item {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-link {
+ font-size: 10px;
+ color: #49796B;
+ 
+ @include onTablet {
+  font-size: 20px;
+}
+}
+.btn {
+  transition: 0.3s;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 15px;
+  height: 45px;
+  cursor: pointer;
+  color: #49796B;
+  @include onTablet {
+    font-size: 20px;
+  }
+}
+
+.is-active {
+  transition: 0.3s;
+  background-color: #49796B;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  height: 45px;
+  cursor: pointer;
+  color: #fff;
+  @include onTablet {
+    font-size: 20px;
+  }
+}
+
+.categoriess {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.lead {
+  color: #49796B;
+}
+label, select {
+  color: #49796B;
+  margin: 4px 0;
+  @include onTablet {
+    font-size: 20px;
+  }
+}
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #49796B;
+  margin: 20px 0;
+}
+
+.gridProducts {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0;
+  @include onDesktop {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}

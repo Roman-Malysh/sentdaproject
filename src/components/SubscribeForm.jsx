@@ -65,7 +65,7 @@ export const SubscribeForm = ({isDarkMode}) => {
   };
 
   return (
-    <form ref={form} onSubmit={(e) => sendEmail(e)} className='form'>
+    <form ref={form} onSubmit={(e) => sendEmail(e)} className='form iPad'>
       <h2>Subscribe to our newsletter to receive updates.</h2>
       <div className='form-wrap'>
       <input

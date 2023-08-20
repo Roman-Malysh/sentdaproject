@@ -1,0 +1,47 @@
+@import './Mixins.scss';
+
+li {
+  list-style-type: none;
+}
+.PaginationGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 20px;
+@include onTablet {
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+
+.PaginWrap {
+  display: flex;
+flex-direction: column;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+}
+
+.ReactPaginate {
+  display: flex;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.ReactPaginate li {
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.pagination__link--active {
+  color: #49796B;
+  font-size: 20px;
+}
+
+.Automotiveee div {
+  cursor: pointer;
+}

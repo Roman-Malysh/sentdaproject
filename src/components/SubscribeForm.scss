@@ -62,3 +62,9 @@
     width: 100%;
   }
 }
+
+.iPad {
+  @include onTablet {
+    margin-bottom: 200px;
+  }
+}

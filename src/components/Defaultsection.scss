@@ -2,7 +2,7 @@
 @import '../components/Mixins.scss';
 
 .ourMission {
-  text-align: left;
+  text-align: center;
   &__title {
     @include onTablet {
       font-size: 40px;
@@ -11,12 +11,12 @@
   &__subtitle {
     @include onTablet {
       font-size: 30px;
+      text-align: center;
     }
   }
 }
 
 .ourMission p {
-  text-align: left;
   @include onTablet {
     font-size: 20px;
   }

@@ -4,12 +4,26 @@ import {useState} from 'react';
 import {BiSolidUser} from 'react-icons/bi';
 import {PiBasketFill} from 'react-icons/pi';
 import {HeaderButton} from './HeaderButton';
-import {NavLink} from 'react-router-dom';
+import {NavLink, useNavigate} from 'react-router-dom';
 import { Login } from './Login';
 
 export const Header = () => {
   const [isNavOpen, setIsNav] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
+  const [search, setSearch] = useState('');
+
+  const navigate = useNavigate();
+
+  const Changer = (event) => {
+    setSearch(event.target.value);
+    
+  }
+
+  const HandleSubmit = (event) => {
+    event.preventDefault();
+    
+    navigate('/Shop');
+  }
   return (
     <header className='header'>
       
@@ -47,12 +61,14 @@ export const Header = () => {
             <Login setIsNav={setIsNav} setIsLogin={setIsLogin}/>
           )}
         <HeaderButton setIsNav={setIsNav} isNavOpen={isNavOpen} setIsLogin={setIsLogin}/>
-        <form className='tablet-search'>
+        <form className='tablet-search' onSubmit={(e) => HandleSubmit(e)}>
           <button className='search' />
           <input
             type='text'
             className='header__input'
             placeholder='Search...'
+            value={search}
+            onChange={(e) => Changer(e)}
           />
         </form>
         <NavLink to={'/'} className='home' onClick={() => {
