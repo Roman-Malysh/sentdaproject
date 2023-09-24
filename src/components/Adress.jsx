@@ -6,24 +6,25 @@ import {GrMail} from 'react-icons/gr';
 import './Adress.scss';
 
 export const Adress = () => {
-  const color = '#49796B';
+  const color = '#88829a';
   return (
     <div className='adresses'>
       <h2 className='adresses__title'>sentda.com</h2>
+      <div>
       <div className='adress'>
         <div className='adress-wrap'>
           <AiFillHome color={color}/>
-          <p className='adress__p'>
+          <a className='adress__p' href='https://maps.app.goo.gl/HQbo387Eu1bK4SoD8'>
             25 1st Ave SW, STE A,
             <br />
             Watertown, SD, 57201-3507
-          </p>
+          </a>
         </div>
       </div>
       <div className='adress'>
         <div className='adress-wrap'>
           <BsTelephoneFill color={color}/>
-          <p className='adress__p'>+1 (605) 956 3910</p>
+          <a className='adress__p' href="tel:+1 (605) 956 3910">+1 (605) 956 3910</a>
         </div>
       </div>
       <div className='adress'>
@@ -35,8 +36,9 @@ export const Adress = () => {
       <div className='adress'>
         <div className='adress-wrap'>
           <GrMail color={color}/>
-          <p className='adress__p'>support@sentda.com</p>
+          <a className='adress__p' href="mailto:support@sentda.com">support@sentda.com</a>
         </div>
+      </div>
       </div>
     </div>
   );

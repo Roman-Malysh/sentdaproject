@@ -1,0 +1,47 @@
+@import './Mixins.scss';
+@import './Variables.scss';
+
+.CardTotal {
+  border: 1px solid #f2f1f6;
+  margin-top: 30px;
+  padding: 10px;
+  @include onDesktop {
+    margin: 20px 0 0 20px;
+    padding: 20px;
+  }
+  &__h1 {
+    color: #616683;
+    text-shadow: 0 1px 0 white;
+    border-bottom: 1px solid #f2f1f6;
+    padding-bottom: 10px;
+    font-size: 20px;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__button {
+    width: max-content;
+    height: 50px;
+    margin: 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #88829a;
+    border-radius: 15px;
+    color: #fff;
+    flex-wrap: wrap;
+    cursor: pointer;
+    font-size: 10px;
+    margin-top: 10px;
+    padding: 0 20px;
+    @include onTablet {
+      height: 60px;
+      font-size: 15px;
+    }
+  }
+  &__p {
+    color: $greymedium;
+  }
+}

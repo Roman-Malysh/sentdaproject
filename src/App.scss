@@ -7,29 +7,27 @@
   box-sizing: border-box;
 }
 
-
 body {
-  position: relative;
-  margin: 0;
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  justify-content: center;
 }
 
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-main {
-  /* Чтобы занимал оставшееся пространство */
-  flex-grow: 1;
-}
 
 .main {
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
   max-width: 1200px;
+  padding: 10px;
+  display: flex;
+  flex-grow: 1;
   @include OnPhone {
     margin: 0 20px;
   }
@@ -41,42 +39,21 @@ main {
   }
 }
 
-.active {
-  color: $orange;
+.activee {
+  color: $greymedium;
 }
 
 section {
   margin-top: 50px;
 }
 
-h1 {
-  background-image: url('./icons/skysolid.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $orange;
-  text-shadow: 1px 1px 0 black;
-  @include onTablet {
-    height: 300px;
-  }
-  @include onDesktop {
-    width: 800px;
-    height: 400px;
-    margin: 0 auto 60px;
-  }
-}
-
 h3 {
-  color: $orange;
+  color: $greymedium;
   text-shadow: 1px 0 0 black;
 }
 
 .section-title {
   font-size: 30px;
-  color: $orange;
+  color: $greymax;
   text-shadow: 1px 1px 0 white;
 }

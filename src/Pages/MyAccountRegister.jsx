@@ -4,15 +4,15 @@ import { PopularProducts } from '../components/PopularProduct';
 import '../components/Defaultsection.scss';
 import '../components/Item.scss';
 
-export const MyAccount = () => {
+export const MyAccountRegister = () => {
   return (
     <div className='ourMission'>
     <h1 className='ourMission__title policy-title'>My Account</h1>
-    <LoginForm title={'Log in'} buttonName='Login' />
+    <LoginForm  title={'Register an account'} buttonName='Register'/>
     <div className='popular-wrap'>
         <PopularProducts />
         <Adress />
       </div>
   </div>
-  );
+  )
 }

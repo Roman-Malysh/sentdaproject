@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
+import { Provider } from 'react-redux';
 import { HashRouter } from "react-router-dom";
 import { Router } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
@@ -17,7 +18,9 @@ root.render(
     
     <HashRouter>
     <ScrollToTop/>
-    <App/>
+
+    <App />
+
     </HashRouter>
     
     

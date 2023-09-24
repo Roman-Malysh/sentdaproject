@@ -1,5 +1,5 @@
 import '../components/Popular.scss';
-import {CategoryCard} from '../components/CategoryCard';
+import {CategoryCard} from './CategoryCard';
 
 export const Popular = () => {
   const toolsHome1 = require('../icons/cards/Tools&Home1.jpeg');
@@ -14,51 +14,43 @@ export const Popular = () => {
     <section className='popular'>
       <h2 className='popular__title section-title'>Popular categories</h2>
       <div className='grid-tablet grid-mobile'>
-        <CategoryCard img={toolsHome1} text='Tools & Home' link={'/ShopTools'}/>
         <CategoryCard
-          img={
-            sportOutdoors
-          }
+          img={toolsHome1}
+          text='Tools & Home'
+          link={'/Categories/Tools'}
+        />
+        <CategoryCard
+          img={sportOutdoors}
           text='Sport & Outdoors'
-          link={'/ShopSport'}
+          link={'/Categories/Sports'}
         />
         <CategoryCard
-          img={
-            homeKitchen
-          }
+          img={homeKitchen}
           text='Home & Kitchen'
-          link={'/ShopHome'}
+          link={'/Categories/Home'}
         />
         <CategoryCard
-          img={
-            toysGames
-          }
+          img={toysGames}
           text='Toys & Games'
-          link={'/ShopToys'}
+          link={'/Categories/Toys'}
         />
       </div>
       <div className='grid-bottom'>
         <CategoryCard
-          img={
-            clothes
-          }
+          img={clothes}
           text='Clothes'
           height='270px'
-          link={'/ShopClothes'}
+          link={'/Categories/Clothes'}
         />
         <CategoryCard
-          img={
-            electronics
-          }
+          img={electronics}
           text='Electronics'
-          link={'/ShopElectronics'}
+          link={'/Categories/Electronics'}
         />
         <CategoryCard
-          img={
-            automotive
-          }
+          img={automotive}
           text='Automotive'
-          link={'/ShopAutomotive'}
+          link={'/Categories/Automotive'}
         />
       </div>
     </section>

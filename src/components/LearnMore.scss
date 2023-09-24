@@ -5,14 +5,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $orange;
-  width: 200px;
+  background-color: $greymedium;
   height: 40px;
   border-radius: 15px;
   margin-top: 30px;
   color: #fff;
   @include onDesktop {
-    @include ButtonHover;
+    &:hover {
+      background-color: $greymax;
+    }
   }
 }
 

@@ -6,7 +6,7 @@ import {Perk} from './Perk';
 import './Perks.scss';
 
 export const Perks = () => {
-  const color = '#49796B';
+  const color = '#88829a';
   return (
     <>
       <h2 className='perk-title section-title'>Our Principles</h2>

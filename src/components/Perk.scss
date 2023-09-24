@@ -1,8 +1,15 @@
 @import './Mixins.scss';
+@import './Variables.scss';
 
 .perk {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 30px;
+  &__title {
+    color: $greymedium;
+  }
+  &__text {
+    color: $greymedium;
+  }
 }

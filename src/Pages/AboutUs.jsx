@@ -1,11 +1,24 @@
 import { Adress } from '../components/Adress';
+import { useState } from 'react';
 import { SubscribeForm } from '../components/SubscribeForm';
+import { PopularProducts } from '../components/PopularProduct';
 import '../components/Defaultsection.scss';
 
 export const AboutUs = () => {
+  const [isErrorLogin, setIsErrorLogin] = useState(false);
+
+  function Subscribe(e) {
+    e.preventDefault();
+    setTimeout(() => {
+      setIsErrorLogin(true);
+      setTimeout(() => {
+        setIsErrorLogin(false);
+      }, 5000);
+    }, 5000);
+  }
   return (
     <div className='ourMission'>
-      <h1 className='ourMission__title'>About Us</h1>
+      <h1 className='ourMission__title policy-title'>About Us</h1>
       <h3 className='ourMission__subtitle'>Honesty and trust</h3>
       <p>
         We are a young and developing trading company that specializes in the
@@ -34,8 +47,23 @@ export const AboutUs = () => {
         happily. With smart search and honest service, we are making our
         customers’ lives a little better right now.
       </p>
-      <SubscribeForm />
-      <Adress />
+      <SubscribeForm click={(e) => Subscribe(e)}/>
+      {isErrorLogin && (
+        <div className='errorWrap orderError'>
+          <div className='error'>
+            <img
+              src='https://icon-library.com/images/image-error-icon/image-error-icon-17.jpg'
+              alt=''
+              className='ErrorImage'
+            />
+            <p className='errorP'>Opps smth went wrong... Contact support</p>
+          </div>
+        </div>
+      )}
+      <div className='popular-wrap'>
+        <PopularProducts />
+        <Adress />
+      </div>
     </div>
   );
 };

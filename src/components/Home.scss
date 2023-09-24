@@ -1,0 +1,11 @@
+@import './Mixins.scss';
+
+.popular-wrap {
+  display: flex;
+  flex-direction: column;
+  @include onTablet {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 30px 0;
+  }
+}

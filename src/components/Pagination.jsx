@@ -1,7 +1,17 @@
 import React from 'react';
 import './PaginatedItems.scss';
 import classNames from 'classnames';
-export function getNumbers(from, to){
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  NavLink,
+  redirect,
+} from 'react-router-dom';
+
+
+export function getNumbers(from, to) {
   const numbers = [];
 
   for (let n = from; n <= to; n += 1) {
@@ -18,7 +28,7 @@ export const Pagination = ({
   onClick,
 }) => {
   const paginsLength = Math.ceil(total / perPage);
-  const pagins = [currentPage, currentPage + 1, currentPage + 2, paginsLength];
+  const pagins = [currentPage, currentPage + 1, currentPage + 2]
 
   const handlePageChange = (page) => {
     if (page === currentPage || page > paginsLength || page < 1) {
@@ -29,68 +39,66 @@ export const Pagination = ({
   };
 
   return (
-   <>
-   { paginsLength > 1 && (
-    <ul className="pagination">
-    <li
-      className={classNames(
-        'page-item',
-        { disabled: currentPage === 1 },
-      )}
-    >
-      <a
-        data-cy="prevLink"
-        className="page-link"
-        aria-disabled={currentPage === 1}
-        onClick={() => {
-          handlePageChange(currentPage - 1);
-          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-        }}
-      >
-        «
-      </a>
-    </li>
-    {pagins.map(page => {
-      return (
-        <li
-          key={page}
-          className={classNames("li",{"li_active": currentPage === page })}
-          
-        >
-          <a
-            data-cy="pageLink"
-            className={classNames("page-link", {"li_active": currentPage === page })}
-            onClick={() => {
-              onPageChanger(page);
-              window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-            }}
+    <>
+      {paginsLength > 1 && (
+        <ul className='pagination'>
+          <li
+            className={classNames('page-item', {disabled: currentPage === 1})}
           >
-            {page}
-          </a>
-        </li>
-      );
-    })}
+            <a
+              data-cy='prevLink'
+              className='page-link'
+              aria-disabled={currentPage === 1}
+              onClick={() => {
+                handlePageChange(currentPage - 1);
+                window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+              }}
+            >
+              «
+            </a>
+          </li>
+          {pagins.map((page) => {
+            return (
+              <li
+            key={`page-${page}`}
+            className={classNames(
+              'page-item',
+              { 'li_active': page === currentPage },
+            )}
+          >
+            <a
+              data-cy="pageLink"
+              className={classNames('page-link', { 'a_active': page === currentPage },)}
+              onClick={() => {
+                handlePageChange(page);
+                window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+              }}
+            >
+              {page}
+            </a>
+          </li>
+            );
+          })}
 
-    <li
-      className={classNames(
-        'page-item',
-        { disabled: currentPage === paginsLength },
+          <li
+            className={classNames('page-item', {
+              disabled: currentPage === paginsLength,
+            })}
+          >
+            <a
+              data-cy='nextLink'
+              className='page-link'
+              aria-disabled={currentPage === paginsLength}
+              onClick={() => {
+                handlePageChange(currentPage + 1)
+                window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+              }}
+            >
+              »
+            </a>
+          </li>
+        </ul>
       )}
-    >
-      <a
-        data-cy="nextLink"
-        className="page-link"
-        aria-disabled={currentPage === paginsLength}
-        onClick={() => {
-          handlePageChange(currentPage + 1);
-          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-        }}
-      >
-        »
-      </a>
-    </li>
-  </ul>
-   )}
-   </>
+    </>
   );
 };

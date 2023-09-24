@@ -3,9 +3,9 @@ import {Link, NavLink} from 'react-router-dom';
 
 export const CategoryCard = ({img, text, alt, link}) => {
   return (
-    <div className='card'>
+    <NavLink className='card' to={link}>
       <img className='card__image' src={img} alt={alt} />
-      <NavLink className='card__title' to={link}>{text}</NavLink>
-    </div>
+      <p className='card__title' to={link}>{text}</p>
+    </NavLink>
   );
 }

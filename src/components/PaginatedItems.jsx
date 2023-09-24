@@ -1,10 +1,12 @@
 import {useEffect, useState, useRef} from 'react';
+import {NavLink} from 'react-router-dom';
 import './PaginatedItems.scss';
 import classNames from 'classnames';
 import {Pagination} from './Pagination';
 import {ProductCard} from './ProductCard';
+import { Shop } from '../Pages/Shop';
 import {Item} from '../Pages/Item';
-import json from "../products.json"
+import json from "../products.json";
 
 
 
@@ -21,26 +23,24 @@ export function getNumbers(from, to) {
 
 const items = getNumbers(1, 42).map((n) => `Item ${n}`);
 
-export const PaginatedItems = ({sort, setId, selectedItemId}) => {
+export const PaginatedItems = ({sort, searchParam, category}) => {
+
+ 
 
   const products = json.map((item) => (
     <ProductCard
       item={item}
       key={item.ID}
       category={item.Categories}
-      setId={setId}
-      selectedItemId={selectedItemId}
     />
   ));
   
   const [items, setItems] = useState(products);
 
-  const [perPage, setPerPage] = useState(5);
+  const [perPage, setPerPage] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // items.map(item => console.log(item.props.category));
-
-  const [filter, setFilter] = useState(sort);
+  const [filter, setFilter] = useState(category);
 
   
 
@@ -84,183 +84,82 @@ export const PaginatedItems = ({sort, setId, selectedItemId}) => {
   );
 
   useEffect(() => {
-    filterItems(filter);
-    console.log(filter);
-  }, [filter]);
+      switch (category) {
+        case 'Other':
+          setItems(other);
+          break;
+        case 'Clothes':
+          setItems(clothes);
+          break;
+        case 'Automotive':
+          setItems(automotive);
+          break;
+        case 'Home':
+          setItems(home);
+          break;
+        case 'Pet Supplies':
+          setItems(pet);
+          break;
+        case 'Sports':
+          setItems(sport);
+          break;
+        case 'Tools':
+          setItems(tools);
+          break;
+        case 'Health':
+          setItems(health);
+          break;
+        case 'Toys':
+          setItems(toys);
+          break;
+        case 'Grocery':
+          setItems(grocery);
+          break;
+        case 'Movies':
+          setItems(movies);
+          break;
+          case 'Electronics':
+            setItems(electronics);
+            break;
+        case 'Musical':
+          setItems(music);
+          break;
+        case 'Books':
+          setItems(books);
+          break;
+        case 'Office Products':
+          setItems(office);
+          break;
+        case 'Beauty':
+          setItems(beauty);
+          break;
+        case 'Other':
+          setItems(beauty);
+          break;
+      }
+  }, [category]);
+
+  useEffect(() => {
+    if (searchParam !== undefined) {
+      const res = products.filter((product) => {return product.props.item.Name.toLowerCase().match(searchParam.toLowerCase())});
+    setItems(res);
+    }
+}, [searchParam])
+  
 
   const ref = useRef(null);
 
   const handleClick = () => {
     ref.current?.scrollIntoView({behavior: 'smooth'});
   };
-  function filterItems(callback) {
-    switch (callback) {
-      case 'Other':
-        setItems(other);
-        break;
-      case 'Clothes':
-        setItems(clothes);
-        break;
-      case 'Automotive':
-        setItems(automotive);
-        break;
-      case 'Home':
-        setItems(home);
-        break;
-      case 'Pet Supplies':
-        setItems(pet);
-        break;
-      case 'Sports':
-        setItems(sport);
-        break;
-      case 'Tools':
-        setItems(tools);
-        break;
-      case 'Health':
-        setItems(health);
-        break;
-      case 'Toys':
-        setItems(toys);
-        break;
-      case 'Grocery':
-        setItems(grocery);
-        break;
-      case 'Movies':
-        setItems(movies);
-        break;
-      case 'Musical':
-        setItems(music);
-        break;
-      case 'Books':
-        setItems(books);
-        break;
-      case 'Office Products':
-        setItems(office);
-        break;
-      case 'Beauty':
-        setItems(beauty);
-        break;
-      case 'Other':
-        setItems(beauty);
-        break;
-    }
-  }
+ 
 
   const start = perPage * currentPage - perPage;
   const end = start + perPage <= items.length ? start + perPage : items.length;
   const visibleItems = items.slice(start, end);
 
-  const handleChange = (event) => {
-    setPerPage(+event.target.value);
-
-    setCurrentPage(1);
-  };
-
   return (
     <div className='containerPagination'>
-      
-      <div className='categoriess' ref={ref}>
-        <button
-          className={classNames('btn', {'is-active': filter === 'Automotive'})}
-          onClick={() => setFilter('Automotive')}
-        >
-          Automotive <br/>{automotive.length}
-        </button>
-        <button
-          className={classNames('btn', {'is-active': filter === 'Home'})}
-          onClick={() => setFilter('Home')}
-        >
-          Home &amp; Kitchen  <br/>{home.length}
-        </button>
-        <button
-          className={classNames('btn', {
-            'is-active': filter === 'Pet Supplies',
-          })}
-          onClick={() => setFilter('Pet Supplies')}
-        >
-          Pet Supplies  <br/>{pet.length}
-        </button>
-        <button
-          className={classNames('btn', {'is-active': filter === 'Sports'})}
-          onClick={() => setFilter('Sports')}
-        >
-          Sports &amp; Outdoors  <br/>{sport.length}
-        </button>
-        <button
-          className={classNames('btn', {'is-active': filter === 'Tools'})}
-          onClick={() => setFilter('Tools')}
-        >
-          Tools &amp; Home Improvement  <br/>{tools.length}
-        </button>
-        <button
-          className={classNames('btn', {'is-active': filter === 'Clothes'})}
-          onClick={() => setFilter('Clothes')}
-        >
-          Clothes  <br/>{clothes.length}
-        </button>
-        <button
-          className={classNames('btn', {'is-active': filter === 'Health'})}
-          onClick={() => setFilter('Health')}
-        >
-          Health &amp; Household  <br/>{health.length}
-        </button>
-        <button
-          className={classNames('btn', {'is-active': filter === 'Other'})}
-          onClick={() => setFilter('Other')}
-        >
-          Other  <br/>{other.length}
-        </button>
-        <button
-          className={classNames('btn', {'is-active': filter === 'Toys'})}
-          onClick={() => setFilter('Toys')}
-        >
-          Toys &amp; Games  <br/>{toys.length}
-        </button>
-        <button
-          className={classNames('btn', {'is-active': filter === 'Grocery'})}
-          onClick={() => setFilter('Grocery')}
-        >
-          Grocery  <br/>{grocery.length}
-        </button>
-        <button
-          className={classNames('btn', {'is-active': filter === 'Electronics'})}
-          onClick={() => setFilter('Electronics')}
-        >
-          Electronics  <br/>{electronics.length}
-        </button>
-        <button
-          className={classNames('btn', {'is-active': filter === 'Movies'})}
-          onClick={() => setFilter('Movies')}
-        >
-          Movies &amp; TV  <br/>{movies.length}
-        </button>
-        <button
-          className={classNames('btn', {'is-active': filter === 'Musical'})}
-          onClick={() => setFilter('Musical')}
-        >
-          Musical Instruments  <br/>{music.length}
-        </button>
-        <button
-          className={classNames('btn', {'is-active': filter === 'Books'})}
-          onClick={() => setFilter('Books')}
-        >
-          Books  <br/>{books.length}
-        </button>
-        <button
-          className={classNames('btn', {
-            'is-active': filter === 'Office Products',
-          })}
-          onClick={() => setFilter('Office Products')}
-        >
-          Office Products  <br/>{office.length}
-        </button>
-        <button
-          className={classNames('btn', {'is-active': filter === 'Beauty'})}
-          onClick={() => setFilter('Beauty')}
-        >
-          Beauty &amp; Personal Care  <br/>{beauty.length}
-        </button>
-      </div>
       <div className='line' />
       <div>
         <p className='lead' data-cy='info'>
@@ -278,6 +177,139 @@ export const PaginatedItems = ({sort, setId, selectedItemId}) => {
           onPageChanger={setCurrentPage}
           onClick={handleClick}
         />
+        {!searchParam && (
+          <>
+            <h1 className='filter-title'>Search by category</h1>
+        <div className='categoriess' ref={ref}>
+        <NavLink
+          className={classNames('btn', {'is-active': category === 'Automotive'})}
+          onClick={() => {
+            setFilter('Automotive');
+            
+          }}
+          to="/Categories/Automotive"
+        >
+          Automotive <br/>{automotive.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {'is-active': category === 'Home'})}
+          onClick={() => setFilter('Home')}
+          to="/Categories/HomeAndKitchen"
+        >
+          Home &amp; Kitchen  <br/>{home.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {
+            'is-active': category === 'Pet Supplies',
+          })}
+          onClick={() => setFilter('Pet Supplies')}
+          to="/Categories/Pet_Supplies"
+        >
+          Pet Supplies  <br/>{pet.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {'is-active': category === 'Sports'})}
+          onClick={() => setFilter('Sports')}
+          to="/Categories/Sports"
+        >
+          Sports &amp; Outdoors  <br/>{sport.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {'is-active': category === 'Tools'})}
+          onClick={() => setFilter('Tools')}
+          to="/Categories/Tools"
+        >
+          Tools &amp; Home <br/>{tools.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {'is-active': category === 'Clothes'})}
+          onClick={() => setFilter('Clothes')}
+          to="/Categories/Clothes"
+        >
+          Clothes  <br/>{clothes.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {'is-active': category === 'Health'})}
+          onClick={() => setFilter('Health')}
+          to="/Categories/Health"
+        >
+          Health &amp; Household  <br/>{health.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {'is-active': category === 'Toys'})}
+          onClick={() => setFilter('Toys')}
+          to="/Categories/Toys"
+        >
+          Toys &amp; Games  <br/>{toys.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {'is-active': category === 'Grocery'})}
+          onClick={() => setFilter('Grocery')}
+          to="/Categories/Grocery"
+
+        >
+          Grocery  <br/>{grocery.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {'is-active': category === 'Electronics'})}
+          onClick={() => setFilter('Electronics')}
+          to="/Categories/Electronics"
+        >
+          Electronics  <br/>{electronics.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {'is-active': category === 'Movies'})}
+          onClick={() => setFilter('Movies')}
+          to="/Categories/Movies"
+        >
+          Movies &amp; TV  <br/>{movies.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {'is-active': filter === 'Musical'})}
+          onClick={() => setFilter('Musical')}
+          to="/Categories/Musical"
+
+        >
+          Musical Instruments  <br/>{music.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {'is-active': filter === 'Books'})}
+          onClick={() => setFilter('Books')}
+          to="/Categories/Books"
+        >
+          Books  <br/>{books.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {
+            'is-active': filter === 'Office Products',
+          })}
+          onClick={() => setFilter('Office Products')}
+          to="/Categories/Office_Products"
+
+        >
+          Office Products  <br/>{office.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {'is-active': filter === 'Beauty'})}
+          onClick={() => setFilter('Beauty')}
+          to="/Categories/Beauty"
+
+        >
+          Beauty &amp; Care  <br/>{beauty.length}
+        </NavLink>
+        <NavLink
+          className={classNames('btn', {'is-active': category === 'Other'})}
+          onClick={() => {
+            setFilter('Other');
+            
+          }}
+          to="/Categories/Other"
+        >
+          Other <br/>{other.length}
+        </NavLink>
+      </div>
+          </>
+      )}
       </div>
     </div>
   );
